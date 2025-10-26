@@ -8,7 +8,7 @@ interface UploadFileProps {
 export function UploadFile({ updateFile } : UploadFileProps) {
   const {getInputProps, getRootProps} = useDropzone({
     onDrop: (files) => updateFile(files),
-    maxFiles: 30,
+    maxFiles: 50,
   })
   
   return (

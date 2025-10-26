@@ -4,9 +4,6 @@ import { FileSubmit } from "./fileSubmit";
 
 export function SubmitData() {
   const [files, setFiles] = useState<File[]>()
-  const [unidade, setUnidade] = useState('')
-  const [area, setArea] = useState('')
-  const [processo, setProcesso] = useState('')
 
   function changeFile(files: File[]) {
     setFiles(files)
@@ -21,7 +18,7 @@ export function SubmitData() {
           <h2 className="font-semibold text-lg">Planilhas carregadas</h2>
           <div className="py-2">
             {files?.map((file) => (
-              <FileSubmit file={file} sectors={{ unidade, area, processo }}/>
+              <FileSubmit file={file}/>
             ))}
           </div>
         </div>
@@ -33,30 +30,6 @@ export function SubmitData() {
           >
           Subir planilha
         </button>*/}
-      </div>
-
-      <div className="flex gap-4">
-        <input 
-          type="text" 
-          className="w-full mt-1 block border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 "
-          value={unidade}
-          onChange={e => setUnidade(e.target.value)}
-          placeholder="unidade"
-        />
-        <input 
-          type="text" 
-          className="w-full mt-1 block border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 "
-          value={area}
-          onChange={e => setArea(e.target.value)}
-          placeholder="area"
-        />
-        <input 
-          type="text" 
-          className="w-full mt-1 block border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 "
-          value={processo}
-          onChange={e => setProcesso(e.target.value)}
-          placeholder="processo"
-        />
       </div>
     </div>
   )
