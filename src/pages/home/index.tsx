@@ -15,7 +15,7 @@ export function Home() {
 
 
   useEffect(() => {
-    if(!unidade || !area || !processo) return
+    if (!unidade || !area || !processo) return
 
     const queryParams = new URLSearchParams()
     queryParams.append('sectorUnidade', unidade)
@@ -42,23 +42,23 @@ export function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {mdrList.map((mdr, index) => (
             <Link to={`/details/${mdr.id}`} key={mdr.id}>
-              <MDRCard 
+              <MDRCard
                 unidade={unidade}
                 processo={processo}
                 area={area}
-                mdr={mdr} 
+                mdr={mdr}
                 index={index}
               />
             </Link>
           ))}
-        </div> 
+        </div>
       ) : (
         <div className="mt-10 flex items-center justify-center">
           <span className="text-gray-600 text-2xl font-semibold">Nenhuma MDR encontrada</span>
         </div>
       )
       }
-      
+
     </div>
   )
 }

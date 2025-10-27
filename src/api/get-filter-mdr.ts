@@ -1,12 +1,12 @@
 import { api } from "../lib/axios";
 import type { MDRFilterType } from "../types/MRD";
 
-interface responseRequest {
+interface responseSchema {
   filterMDR: MDRFilterType[]
 }
 
 export async function getFilterMDR() {
-  const response = await api.get<responseRequest>('/MDR/filters')
+  const response = await api.get<responseSchema>('/MDR/filters')
 
   return response.data.filterMDR
 }
