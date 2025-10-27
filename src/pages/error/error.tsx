@@ -11,7 +11,8 @@ export function ErrorPage() {
         error: error.name,
         info: error.message,
         userAgent: navigator.userAgent,
-        url: window.location.href
+        url: window.location.href,
+        stack: error.stack,
       })
     }
   }, [error])

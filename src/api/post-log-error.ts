@@ -5,6 +5,7 @@ interface requestSchema {
   info: string
   userAgent: string
   url: string
+  stack?: string
 }
 
 export async function postLogError(data: requestSchema) {
